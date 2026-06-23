@@ -1,0 +1,115 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@font-face {
+    font-family: pyidaungsu;
+    src: url("../fonts/pyi-daung-su/pyi-daung-su_Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: pyidaungsu;
+    src: url("../fonts/pyi-daung-su/pyi-daung-su.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: pyidaungsu;
+    src: url("../fonts/pyi-daung-su/pyi-daung-su_Bold.ttf") format("truetype");
+    font-weight: bolder;
+    font-size: normal;
+}
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --font-default: 'pyidaungsu';
+
+      /* Colors */
+    --color-navbar: rgba(var(--bs-emphasis-color-rgb), 0.65);
+    --color-navbar-hover: rgba(var(--bs-emphasis-color-rgb), 0.8);
+    --color-navbar-active: rgba(var(--bs-emphasis-color-rgb), 1);
+
+    /* Font sizes */
+    --text-navbar-brand: 1.09375rem;
+
+    /* Radius */
+    --radius-navbar-toggler: 8px;
+
+    /* Spacing */
+    --spacing-navbar-brand-y: 0.3359375rem;
+    --spacing-navbar-link-x: 0.5rem;
+    --spacing-navbar-toggler-x: 0.75rem;
+    --spacing-navbar-toggler-y: 0.25rem;
+
+    --color-nav-link: var(--bs-nav-link-color);
+    --color-nav-link-hover: var(--bs-nav-link-hover-color);
+
+    --text-nav-link: var(--bs-nav-link-font-size);
+
+
+    --color-sidebar-bg: var(--sidebar-bg, #ffffff);
+    --color-sidebar-text: var(--sidebar-text, #1f2937);
+    --color-sidebar-active-bg: var(--sidebar-active-bg, #f3f4f6);
+    --color-sidebar-active-text: var(--sidebar-active-text, #111827);
+    --color-sidebar-hover-bg: var(--sidebar-hover-bg, #f9fafb);
+    --color-sidebar-hover-text: var(--sidebar-hover-text, #111827);
+}
+
+:root {
+  /* Default Core Page Tokens */
+  --page-bg: #f9fafb;
+  --page-primary: #635bff;
+  --page-heading: #111827;
+  --page-text: #4b5563;
+
+  /* Card and Component Container Details */
+  --card-bg: #ffffff;
+  
+  /* The Missing Link: Define an explicit border color variable */
+  --card-border: rgba(0, 0, 0, 0.08);
+  --border-opacity: rgba(0, 0, 0, 0.08);
+}
+
+/* Optional Dark Mode Configuration overrides */
+.dark :root {
+  --page-bg: #0b0f19;
+  --page-primary: #818cf8;
+  --page-heading: #f9fafb;
+  --page-text: #9ca3af;
+  
+  --card-bg: #111827;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --border-opacity: rgba(255, 255, 255, 0.08);
+}
+
+.custom-toast {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 9999;
+    transform: translateX(120%);
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+}
+
+.custom-toast.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Linear progress countdown bar */
+.custom-toast .toast-progress {
+    transform-origin: left;
+    animation: toastProgressDuration 4s linear forwards;
+}
+
+@keyframes toastProgressDuration {
+    from { transform: scaleX(1); }
+    to { transform: scaleX(0); }
+}
